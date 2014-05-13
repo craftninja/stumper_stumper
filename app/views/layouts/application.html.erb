@@ -3,14 +3,41 @@
 <head>
   <title>StumperStumper</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-<%= notice %>
-<%= alert %>
-<%= yield %>
+
+<header>
+  <div class="container">
+    <h1 class="logo">StumperStumper</h1>
+
+    <p class="tagline">Can you beat the stumper?</p>
+  </div>
+</header>
+<main>
+  <div class="container">
+    <% if notice.present? %>
+      <div class="flash notice">
+        <%= notice %>
+      </div>
+    <% end %>
+
+    <% if alert.present? %>
+      <div class="flash alert">
+        <%= alert %>
+      </div>
+    <% end %>
+
+    <%= yield %>
+  </div>
+</main>
+<footer>
+  <div class="container">
+    Hacked together by Emily Platzer and Jeff Dean @ QuickLeft Hackfest
+  </div>
+</footer>
 
 </body>
 </html>

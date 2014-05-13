@@ -1,0 +1,106 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+.container {
+  width: 960px;
+  margin: auto;
+  padding: 1em;
+}
+
+header {
+  background: #99A660;
+
+  h1 {
+    margin: 0;
+    padding: 0;
+    font-family: "Lucida Grande", "Bitstream Vera Sans", "Verdana";
+  }
+
+  p {
+    font-family: "Helvetica Neue";
+    font-style: italic;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+main {
+  background: #efefef;
+}
+
+html, body {
+  background: #528282;
+}
+
+footer {
+  font-family: "Helvetica Neue";
+  background: #528282;
+  color: white;
+}
+
+.level-choice-container {
+  text-align: center;
+  margin-top: 2em;
+}
+
+.level-choice {
+  box-sizing: border-box;
+  display: inline-block;
+  background: red;
+  width: 100px;
+  height: 100px;
+  border-radius: 50px;
+  text-align: center;
+  font-size: 48px;
+  text-decoration: none;
+  color: white;
+  padding-top: 20px;
+
+  & + & {
+    margin-left: 2em;
+  }
+
+  &:nth-child(1) {
+    background: #528282;
+  }
+
+  &:nth-child(2) {
+    background: #D9C045;
+  }
+
+  &:nth-child(3) {
+    background: #B37D47;
+  }
+
+  &:nth-child(4) {
+    background: #D4C992;
+  }
+}
+
+table#results {
+
+  width: 700px;
+  margin: auto;
+  margin-top: 2em;
+  margin-bottom: 2em;
+  border: 1px solid #B37D47;
+
+  td {
+    padding: .5em;
+    border: 1px solid #B37D47;
+  }
+
+}
