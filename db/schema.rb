@@ -11,18 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140513011817) do
+ActiveRecord::Schema.define(version: 20140513031534) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "games", force: true do |t|
-    t.integer  "level"
-    t.integer  "guesses"
-    t.string   "generated_number"
-    t.string   "status"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
+    t.integer  "level",                                 null: false
+    t.integer  "guesses",          default: 0,          null: false
+    t.string   "generated_number",                      null: false
+    t.string   "status",           default: "unsolved", null: false
+    t.datetime "created_at",                            null: false
+    t.datetime "updated_at",                            null: false
   end
 
 end
