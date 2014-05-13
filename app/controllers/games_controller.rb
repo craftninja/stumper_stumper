@@ -19,12 +19,17 @@ class GamesController < ApplicationController
     game.guesses ||= 0
     game.guesses += 1
     game.save
-    result = game.guess(params[:guess])
-    if result == [game.generated_number.length, 0]
-      game.update_attributes(status: "solved")
-      redirect_to root_path, notice: "#{game.generated_number.length} out of #{game.generated_number.length} correct. You won!"
+
+    if params[:guess].length != game.level
+      redirect_to game_path(game), alert: "You must enter a #{game.level}-digit number! You entered a #{params[:guess].length}-digit number!!"
     else
-      redirect_to game_path(game), alert: "Number right: #{result[0]} - Number in wrong place: #{result[1]}"
+      result = game.guess(params[:guess])
+      if result == [game.generated_number.length, 0]
+        game.update_attributes(status: "solved")
+        redirect_to root_path, notice: "#{game.generated_number.length} out of #{game.generated_number.length} correct. You won!"
+      else
+        redirect_to game_path(game), alert: "Number right: #{result[0]} - Number in wrong place: #{result[1]}"
+      end
     end
   end
 
