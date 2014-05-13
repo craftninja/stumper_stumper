@@ -1,6 +1,8 @@
 <%= form_tag game_path(@game) do %>
 
-  <input type="text" name="guess" placeholder="Your guess">
-  <input type="submit" value="Guess">
+  <p class="question">I'm thinking of a <%= @game.level %>-digit number.  What could it be?</p>
+
+  <input type="text" name="guess" placeholder="Your guess" class="guess-box">
+  <input type="submit" value="Guess" class="guess-button">
 
 <% end %>

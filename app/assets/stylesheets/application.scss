@@ -54,6 +54,7 @@ footer {
 .level-choice-container {
   text-align: center;
   margin-top: 2em;
+  margin-bottom: 2em;
 }
 
 .level-choice {
@@ -77,16 +78,32 @@ footer {
     background: #528282;
   }
 
+  &:nth-child(1):hover {
+    background: #497474;
+  }
+
   &:nth-child(2) {
     background: #D9C045;
+  }
+
+  &:nth-child(2):hover {
+    background: #C2AB3D;
   }
 
   &:nth-child(3) {
     background: #B37D47;
   }
 
+  &:nth-child(3):hover {
+    background: #A06F3F;
+  }
+
   &:nth-child(4) {
     background: #D4C992;
+  }
+
+  &:nth-child(4):hover {
+    background: #BDB382;
   }
 }
 
@@ -101,6 +118,42 @@ table#results {
   td {
     padding: .5em;
     border: 1px solid #B37D47;
+  }
+
+}
+
+p.question {
+  font-family: "Lucida Grande", "Bitstream Vera Sans", "Verdana";
+  margin-top: 1em;
+  margin-bottom: 1em;
+  padding: 0;
+  font-size: 2em;
+}
+
+.guess-box {
+  font-size: 2em;
+  padding: .2em;
+}
+
+.guess-button {
+  margin-bottom: 2em;
+  font-size: 2em;
+  background: #D9C045;
+  border: 2px solid #A06F3F;
+}
+
+.flash {
+  box-sizing: border-box;
+  margin: 0 0 0 0;
+  padding: 1em;
+  border-radius: 5px;
+
+  &.notice {
+    background: skyblue;
+  }
+
+  &.alert {
+    background: pink;
   }
 
 }
