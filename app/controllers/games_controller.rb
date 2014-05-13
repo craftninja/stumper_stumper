@@ -1,7 +1,9 @@
 class GamesController < ApplicationController
 
   def new
-    game = Game.create!(level: params[:level], generated_number: 246)
+    other_game = Game.new
+    generated_number = other_game.generate_random_number(params[:level].to_i)
+    game = Game.create!(level: params[:level], generated_number: generated_number)
     redirect_to game_path(game)
   end
 
