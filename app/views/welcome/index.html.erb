@@ -1,0 +1,21 @@
+<div class="level-choice-container">
+  <%= link_to "2", new_game_path(level: 2), class: "level-choice" %>
+  <%= link_to "3", new_game_path(level: 3), class: "level-choice" %>
+  <%= link_to "4", new_game_path(level: 4), class: "level-choice" %>
+  <%= link_to "5", new_game_path(level: 5), class: "level-choice" %>
+</div>
+
+<table id="results">
+  <tr>
+    <th>Date</th>
+    <th>Level</th>
+    <th>Result</th>
+  </tr>
+  <% @games.each do |game| %>
+    <tr>
+      <td><%= time_ago_in_words game.updated_at %> ago</td>
+      <td><%= game.level %></td>
+      <td><%= game.result %></td>
+    </tr>
+  <% end %>
+</table>
