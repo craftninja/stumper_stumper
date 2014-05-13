@@ -37,6 +37,10 @@ group :development, :test do
   gem "capybara"
 end
 
+group :production do
+  gem "rails_12factor"
+end
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
