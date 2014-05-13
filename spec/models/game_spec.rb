@@ -33,4 +33,15 @@ describe Game do
     srand(Random.new_seed)
   end
 
+  it 'can return the number right and number in wrong place for 2 digits' do
+    game = Game.new(generated_number: "247")
+    expect(game.guess("126")).to eq([0, 1])
+    expect(game.guess("247")).to eq([3, 0])
+    expect(game.guess("222")).to eq([1, 0])
+    expect(game.guess("737")).to eq([1, 0])
+    expect(game.guess("724")).to eq([0, 3])
+    expect(Game.new(generated_number: "242").guess("223")).to eq([1, 1])
+    expect(Game.new(generated_number: "74372").guess("43177")).to eq([1, 3])
+  end
+
 end

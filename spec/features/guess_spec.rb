@@ -9,8 +9,8 @@ feature 'Guessing' do
     click_on "3"
     fill_in "Your guess", with: "136"
     click_button "Guess"
-    expect(page).to have_content("Number right: 1")
-    expect(page).to have_content("Number in wrong place: 2")
+    expect(page).to have_content("Number right: 0")
+    expect(page).to have_content("Number in wrong place: 1")
 
     fill_in "Your guess", with: "689"
     click_button "Guess"

@@ -13,10 +13,11 @@ class GamesController < ApplicationController
 
   def guess
     game = Game.find(params[:id])
-    if params[:guess] == game.generated_number
-      redirect_to root_path, notice: "3 out of 3 correct. You won!"
+    result = game.guess(params[:guess])
+    if result == [game.generated_number.length, 0]
+      redirect_to root_path, notice: "#{game.generated_number.length} out of #{game.generated_number.length} correct. You won!"
     else
-      redirect_to game_path(game), alert: "Number right: 1 - Number in wrong place: 2"
+      redirect_to game_path(game), alert: "Number right: #{result[0]} - Number in wrong place: #{result[1]}"
     end
   end
 
