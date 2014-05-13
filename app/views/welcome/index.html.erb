@@ -16,7 +16,10 @@
       <tr>
         <td><%= time_ago_in_words game.updated_at %> ago</td>
         <td><%= game.level %></td>
-        <td><%= game.result %></td>
+        <td>
+          <%= game.status %> - 
+          <%= pluralize game.guesses || 0, 'guess' %>
+        </td>
       </tr>
     <% end %>
   </table>
