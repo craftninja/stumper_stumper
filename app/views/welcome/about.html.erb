@@ -1,14 +1,11 @@
-<h1>Stumper Stumper</h1>
-
 <h2>
   Examples
 </h2>
 
+<% @examples.each do |generated_number, guess, (number_right, number_in_wrong_place)| %>
 
-126 [0, 1])
-expect(game.guess("247")).to eq([3, 0])
-expect(game.guess("222")).to eq([1, 0])
-expect(game.guess("737")).to eq([1, 0])
-expect(game.guess("724")).to eq([0, 3])
-expect(Game.new(generated_number: "242").guess("223")).to eq([1, 1])
-expect(Game.new(generated_number: "74372").guess("43177"))
+  <p>If the number is <%= generated_number %>, and you entered <%= guess %>, the result
+    would be <%= number_right %> correct, and <%= number_in_wrong_place %> in the wrong place.
+  </p>
+
+<% end %>
