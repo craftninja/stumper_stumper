@@ -1,7 +1,7 @@
 class WelcomeController < ApplicationController
 
   def index
-    @games = Game.all
+    @games = Game.all.sort_by { |game| game.updated_at}.reverse
   end
 
   def about
