@@ -1,7 +1,7 @@
 class WelcomeController < ApplicationController
 
   def index
-    @games = Game.all
+    @games = Game.all.reverse
   end
 
   def about
