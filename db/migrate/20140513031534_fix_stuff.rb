@@ -1,4 +1,4 @@
-class FixStuff < ActiveRecord::Migration
+class FixStuff < ActiveRecord::Migration[4.2]
   def change
     create_table :games, force: true do |t|
       t.integer :level, null: false

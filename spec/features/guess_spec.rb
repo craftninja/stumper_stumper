@@ -14,7 +14,7 @@ feature 'Guessing' do
 
     fill_in "Your guess", with: "689"
     click_button "Guess"
-    expect(page).to have_content("3 out of 3 correct.  You won!")
+    expect(page).to have_content("3 out of 3 correct. You won!")
     within("#results") do
       expect(page).to have_content("3") # level
       expect(page).to have_content("2") # # of guesses
